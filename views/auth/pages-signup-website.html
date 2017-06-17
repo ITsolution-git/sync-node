@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" class="body-full-height">
+
+<head>
+    <!-- META SECTION -->
+    <title>Sync </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <!-- END META SECTION -->
+    <!-- CSS INCLUDE -->
+    <link rel="stylesheet" type="text/css" id="theme" href="/css/theme-default.css" />
+    <!-- EOF CSS INCLUDE -->
+</head>
+
+<body>
+    <div class="login-container lightmode">
+        <div class="login-box animated fadeInDown">
+            <div class="login-logo"></div>
+            <div class="login-body">
+                <div class="login-title"><strong>Sign Up</strong> to your account</div>
+                <form id="signup_form" action="/auth/signup" class="form-horizontal" method="post">
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <input type="text" class="validate[required]  form-control" placeholder="First Name" name="first_name" />
+                            <span class="help-block">Required</span>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="validate[required] form-control" placeholder="Last Name" name="last_name" />
+                            <span class="help-block">Required</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input type="text" class=" form-control" placeholder="E-mail" name="email" />
+                            <span class="help-block">Required email</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input type="password" class="validate[required,minSize[5],maxSize[10]] form-control" placeholder="Password" name="password" id="password2" />
+                            <span class="help-block">Required, min size = 5, max size = 10</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <input type="password" class="validate[required,minSize[5],maxSize[10]] form-control" placeholder="Confirm Password" name="confirm_password" />
+                            <span class="help-block">Required, min size = 5, max size = 10</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            .
+                        </div>
+                        <div class="col-md-12">
+                            <button class="btn btn-info btn-block" type="submit">Sign Up</button>
+                        </div>
+                    </div>
+                    <!-- <div class="login-or">OR</div> -->
+                    <!-- <div class="form-group">
+                        <div class="col-md-4">
+                            <button class="btn btn-info btn-block btn-twitter"><span class="fa fa-twitter"></span> Twitter</button>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-info btn-block btn-facebook"><span class="fa fa-facebook"></span> Facebook</button>
+                        </div>
+                        <div class="col-md-4">                            
+                            <button class="btn btn-info btn-block btn-google"><span class="fa fa-google-plus"></span> Google</button>
+                        </div>
+                    </div> -->
+                    <div class="login-subtitle">
+                        <a href="/auth/login">Log In account</a>
+                    </div>
+                </form>
+            </div>
+            <div class="login-footer">
+                <div class="pull-left">
+                    &copy; 2014 AppName
+                </div>
+                <div class="pull-right">
+                    <a href="#">About</a> |
+                    <a href="#">Privacy</a> |
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- START PLUGINS -->
+    <script type="text/javascript" src="/js/plugins/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/plugins/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/plugins/bootstrap/bootstrap.min.js"></script>
+
+    <script type='text/javascript' src='/js/plugins/icheck/icheck.min.js'></script>
+    <script type="text/javascript" src="/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+
+    <script type='text/javascript' src='/js/plugins/validationengine/languages/jquery.validationEngine-en.js'></script>
+    <script type='text/javascript' src='/js/plugins/validationengine/jquery.validationEngine.js'></script>        
+
+    <script type='text/javascript' src='/js/plugins/jquery-validation/jquery.validate.js'></script>
+
+    <!-- START TEMPLATE -->
+    <!-- <script type="text/javascript" src="/js/settings.js"></script> -->
+    
+    <script type="text/javascript" src="/js/plugins.js"></script>
+    <script type="text/javascript" src="/js/actions.js"></script>
+    <!-- END TEMPLATE -->
+
+    <script type="text/javascript" src="/js/auth/signup.js"></script>
+</body>
+
+</html>
