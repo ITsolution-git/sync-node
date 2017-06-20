@@ -205,7 +205,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             
-                            <form class="form-horizontal">
+                            <form class="form-horizontal" name="createform" id="create-form" action="/project/create" method="POST">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h3 class="panel-title"><strong>Projects</strong></h3>
@@ -222,7 +222,9 @@
                                         <div class="col-md-6 col-xs-12">
                                             <div class="input-group">
                                                 <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                                <div>
                                                 <input type="text" class="form-control" name="title"/>
+                                                </div>
                                             </div>
                                             <span class="help-block">This is title of project</span>
                                         </div>
@@ -299,7 +301,7 @@
                                 </div>
                                 <div class="panel-footer">
                                     <button class="btn btn-default">Clear Form</button>
-                                    <button class="btn btn-primary pull-right">Submit</button>
+                                    <button class="btn btn-primary pull-right" type="submit">Submit</button>
                                 </div>
                             </div>
                             </form>
@@ -335,8 +337,8 @@
         <!-- END MESSAGE BOX-->
 
         <!-- START PRELOADS -->
-        <audio id="audio-alert" src="audio/alert.mp3" preload="auto"></audio>
-        <audio id="audio-fail" src="audio/fail.mp3" preload="auto"></audio>
+        <audio id="audio-alert" src="/audio/alert.mp3" preload="auto"></audio>
+        <audio id="audio-fail" src="/audio/fail.mp3" preload="auto"></audio>
         <!-- END PRELOADS -->             
         
     <!-- START SCRIPTS -->
@@ -354,13 +356,18 @@
         <script type="text/javascript" src="/js/plugins/bootstrap/bootstrap-file-input.js"></script>
         <script type="text/javascript" src="/js/plugins/bootstrap/bootstrap-select.js"></script>
         <script type="text/javascript" src="/js/plugins/tagsinput/jquery.tagsinput.min.js"></script>
+        <script type='text/javascript' src='/js/plugins/validationengine/languages/jquery.validationEngine-en.js'></script>
+        <script type='text/javascript' src='/js/plugins/validationengine/jquery.validationEngine.js'></script>        
+
+        <script type='text/javascript' src='/js/plugins/jquery-validation/jquery.validate.js'></script>
         <!-- END THIS PAGE PLUGINS -->       
         
         <!-- START TEMPLATE -->
         <script type="text/javascript" src="/js/settings.js"></script>
         
         <script type="text/javascript" src="/js/plugins.js"></script>        
-        <script type="text/javascript" src="/js/actions.js"></script>        
+        <script type="text/javascript" src="/js/actions.js"></script>
+        <script type="text/javascript" src="/js/project/create.js"></script>
         <!-- END TEMPLATE -->
     <!-- END SCRIPTS -->                   
     </body>
