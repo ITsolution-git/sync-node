@@ -2,7 +2,7 @@
 <html lang="en">
     <head>        
         <!-- META SECTION -->
-        <title>Joli Admin - Responsive Bootstrap Admin Template</title>            
+        <title>Sync</title>            
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -23,7 +23,7 @@
                 <!-- START X-NAVIGATION -->
                 <ul class="x-navigation">
                     <li class="xn-logo">
-                        <a href="index.html">Joli Admin</a>
+                        <a href="index.html">Sync Admin</a>
                         <a href="#" class="x-navigation-control"></a>
                     </li>
                     <li class="xn-profile">
@@ -205,7 +205,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             
-                            <form class="form-horizontal" name="createform" id="create-form" action="/project/create" method="POST">
+                            <form class="form-horizontal" name="createform" id="create-form" action="/projects/create" method="POST" enctype="multipart/form-data">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h3 class="panel-title"><strong>Projects</strong></h3>
@@ -216,12 +216,15 @@
                                 <div class="panel-body">
                                     <p>This is non libero bibendum, scelerisque arcu id, placerat nunc. Integer ullamcorper rutrum dui eget porta. Fusce enim dui, pulvinar a augue nec, dapibus hendrerit mauris. Praesent efficitur, elit non convallis faucibus, enim sapien suscipit mi, sit amet fringilla felis arcu id sem. Phasellus semper felis in odio convallis, et venenatis nisl posuere. Morbi non aliquet magna, a consectetur risus. Vivamus quis tellus eros. Nulla sagittis nisi sit amet orci consectetur laoreet. Vivamus volutpat erat ac vulputate laoreet. Phasellus eu ipsum massa.</p>
                                 </div>
+                                <% if(status == "status") { %>
+                                <label class="col-md-6 col-xs-12 control-label" style="color: red;"><%= message %> </label>
+                                <% } %>
                                 <div class="panel-body">
                                     <div class="form-group">
                                         <label class="col-md-3 col-xs-12 control-label">Title</label>
                                         <div class="col-md-6 col-xs-12">
                                             <div class="input-group">
-                                                <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                                <!-- <span class="input-group-addon"><span class="fa fa-pencil"></span></span> -->
                                                 <div>
                                                 <input type="text" class="form-control" name="title"/>
                                                 </div>
@@ -263,7 +266,7 @@
                                     <div class="form-group">
                                         <label class="col-md-3 col-xs-12 control-label">Category</label>
                                         <div class="col-md-6 col-xs-12">
-                                            <input type="text" class="tagsinput" value="" name="category"/>
+                                            <input type="text" class="tagsinput" value="" name="category" data-placeholder="add a category" />
                                             <span class="help-block">This is category of project</span>
                                         </div>
                                     </div>
@@ -284,8 +287,8 @@
                                     
                                     <div class="form-group">
                                         <label class="col-md-3 col-xs-12 control-label">Image</label>
-                                        <div class="col-md-6 col-xs-12">                                                                                                                                        
-                                            <input type="file" class="fileinput btn-primary" name="filename" id="filename" title="Browse file" name="image_link"/>
+                                        <div class="col-md-6 col-xs-12">                                                   
+                                            <input type="file" class="fileinput btn-primary" id="filename" title="Browse file" name="image"/>
                                             <span class="help-block">This is image of project</span>
                                         </div>
                                     </div>

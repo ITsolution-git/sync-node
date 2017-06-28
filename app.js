@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var session = require('express-session');
-
+var fileUpload = require('express-fileupload');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var auth = require('./routes/auth');
@@ -31,6 +31,7 @@ app.set('view engine', 'html');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(fileUpload());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -91,8 +92,8 @@ app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  console.log(err.message)
+  console.log("========================== error ==================================")
+  console.log(err)
   // render the error page
   res.status(err.status || 500);
   res.render('pages-error-404-2');

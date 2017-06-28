@@ -23,6 +23,7 @@ router.post('/login', function(req, res, next){
 		}else{
             if(user.authenticate(body.password)){
     			req.session.email=req.body.email;
+                req.session.user_id = user._id;
                 
     			console.log('User sign in successfully!')
         		res.redirect('/index');		                
