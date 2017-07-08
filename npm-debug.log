@@ -9,7 +9,7 @@
 6 silly lifecycle first@0.0.0~prestart: no script for prestart, continuing
 7 info lifecycle first@0.0.0~start: first@0.0.0
 8 verbose lifecycle first@0.0.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle first@0.0.0~start: PATH: /home/apple/.nvm/versions/node/v6.9.0/lib/node_modules/npm/bin/node-gyp-bin:/media/apple/f50223eb-8502-4183-93ad-3e6be8fce2e0/work/pray/first/node_modules/.bin:/home/apple/.nvm/versions/node/v6.9.0/bin:/opt/project-neon/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/apple/.go/bin
+9 verbose lifecycle first@0.0.0~start: PATH: /home/apple/.nvm/versions/node/v6.9.0/lib/node_modules/npm/bin/node-gyp-bin:/media/apple/f50223eb-8502-4183-93ad-3e6be8fce2e0/work/pray/first/node_modules/.bin:/home/apple/.nvm/versions/node/v6.9.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/home/apple/.go/bin
 10 verbose lifecycle first@0.0.0~start: CWD: /media/apple/f50223eb-8502-4183-93ad-3e6be8fce2e0/work/pray/first
 11 silly lifecycle first@0.0.0~start: Args: [ '-c', 'node ./bin/www' ]
 12 silly lifecycle first@0.0.0~start: Returned: code: 1  signal: null

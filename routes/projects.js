@@ -20,12 +20,23 @@ router.get('/index', function(req, res, next) {
 
 	Project.count({author_id: sess.user_id}, function(err, count){
 		Project.find({author_id: sess.user_id}, {} , { skip: per_page * page, limit: per_page}, function(err, projects){
+			categories = []
+			projects.forEach(function(project){
+				categories = categories.concat(project.category)
+			});
+
+			category_list = categories.reduce(function(a, b) {
+			    return Object.assign(a, {[b]: (a[b] || 0) + 1})
+			}, {});
+
+
 			res.render('pages-blog-list', { 
 					title: 'Projects list', 
 					projects: projects, 
 					count: Math.ceil(count/per_page), 
 					page: page, 
-					per_page: per_page });
+					per_page: per_page,
+					category: category_list });
 		})
 	})
 });
@@ -64,7 +75,8 @@ router.post('/create', function(req, res, next) {
 			    	like: 0,
 			    	follow: 0,
 			    	view: 0,
-			    	author_id: sess.user_id
+			    	author_id: sess.user_id,
+			    	private: body.private
 			    })
 
 			    project.save(function(err){

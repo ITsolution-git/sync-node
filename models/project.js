@@ -13,7 +13,8 @@ var projectSchema = new mongoose.Schema({
     view: Number,
     category: [String],
     created_at: Date,
-    updated_at: Date
+    updated_at: Date,
+    private: Boolean
 });
 
 projectSchema.pre('save', function(next) {
