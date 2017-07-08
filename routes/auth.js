@@ -24,6 +24,7 @@ router.post('/login', function(req, res, next){
             if(user.authenticate(body.password)){
     			req.session.email=req.body.email;
                 req.session.user_id = user._id;
+                req.session.image = user.image;
                 
     			console.log('User sign in successfully!')
         		res.redirect('/index');		                
@@ -55,7 +56,8 @@ router.post('/signup', function(req, res, next) {
         email: body.email,
         salt: body.salt,
         password: body.password,
-        admin: false
+        admin: false,
+        image: 'images/no-image.jpg'
     });
 
     new_user.save(function(err, data){
@@ -68,8 +70,7 @@ router.post('/signup', function(req, res, next) {
     	}else{
             sess.email = new_user.email;
 	    	console.log("User created successfully")
-	    	res.redirect('/index');
-    		
+	    	res.redirect('/index');    		
     	}
     });    
 });

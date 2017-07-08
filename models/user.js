@@ -17,7 +17,8 @@ var userSchema = new mongoose.Schema({
     passion: String,
     goals: String,
     created_at: Date,
-    updated_at: Date
+    updated_at: Date,
+    image: String,
 });
 
 userSchema.pre('save', function(next) {
