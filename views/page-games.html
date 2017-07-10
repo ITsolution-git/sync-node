@@ -102,14 +102,16 @@
                         <div class="gallery" id="links">
 
                             <% games.forEach(function(game){ %>
-                                <a class="gallery-item" href="<%= game.link%>" title="<%= game.name%>" data-gallery>
-                                    <div class="image">                              
-                                        <img src="<%= game.image_link%>" height="235"/>
-                                    </div>
-                                    <div class="meta">
-                                        <strong><%= game.name%></strong>
-                                    </div>                                
-                                </a>
+                                <div class="">
+                                    <a class="gallery-item" href="<%= game.link%>" title="<%= game.name%>" data-gallery>
+                                        <div class="image">                              
+                                            <img src="<%= game.image_link%>" height="235"/>
+                                        </div>
+                                        <div class="meta">
+                                            <strong><%= game.name %></strong>
+                                        </div>
+                                    </a>
+                                </div>
                             <% })%>
 
                              

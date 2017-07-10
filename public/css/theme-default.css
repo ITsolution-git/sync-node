@@ -7330,3 +7330,15 @@ li.ext_zip {
 .x-navigation-minimized .xn-logo{
 display:none;
 }
+
+.g-item{
+  height: 400px;
+}
+
+.login-logo-title{
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  font-size: 27px;
+  padding: 7%;
+}
