@@ -24,8 +24,8 @@ router.post('/login', function(req, res, next){
             if(user.authenticate(body.password)){
     			req.session.email=req.body.email;
                 req.session.user_id = user._id;
-                req.session.image = user.image;
-                
+                req.session.user = user;
+
     			console.log('User sign in successfully!')
         		res.redirect('/index');		                
             } else {

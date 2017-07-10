@@ -6,6 +6,7 @@ var encrypt = require('../utils/encryption');
 var gameSchema = new mongoose.Schema({
     name: String,
     link: String,
+    description: String,
     image_link: String,
     point: Number,
     created_at: Date,

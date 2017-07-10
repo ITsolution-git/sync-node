@@ -21,7 +21,7 @@ $(document).ready(function() {
             confirm_password: {
                 required: true,
                 minlength: 8,
-                equalTo: "#password2"
+                equalTo: "#password"
             },
             image: {
                 required: true

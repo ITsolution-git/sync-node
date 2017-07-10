@@ -36,13 +36,18 @@ router.get('/index', function(req, res, next) {
 					count: Math.ceil(count/per_page), 
 					page: page, 
 					per_page: per_page,
-					category: category_list });
+					category: category_list, 
+					user: req.session.user });
 		})
 	})
 });
 
 router.get('/create', function(req, res, next) {
-	res.render('form-layouts-one-column', { title: 'Projects category', status: '', message: '' });
+	res.render('form-layouts-one-column', { 
+		title: 'Projects category', 
+		status: '', 
+		message: '',
+		user: req.session.user });
 });
 
 router.post('/create', function(req, res, next) {
@@ -82,11 +87,19 @@ router.post('/create', function(req, res, next) {
 			    project.save(function(err){
 			    	if(err) return res.status(500).send(err);
 
-					res.render('form-layouts-one-column', { title: 'Projects category', status: 'status', message: 'You created the project successfully' });
+					res.render('form-layouts-one-column', { 
+						title: 'Projects category', 
+						status: 'status', 
+						message: 'You created the project successfully',
+						user: req.session.user });
 			    })
 			});			
 		} else {
-			res.render('form-layouts-one-column', { title: 'Projects category', status: 'status', message:'You should upload image' });
+			res.render('form-layouts-one-column', { 
+				title: 'Projects category', 
+				status: 'status', 
+				message:'You should upload image',
+				user: req.session.user });
 		}
 	}
 

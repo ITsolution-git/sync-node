@@ -3,9 +3,14 @@ var router = express.Router();
 var session = require('express-session');
 var User = require('../models/user');
 var encrypt = require('../utils/encryption');
+var path = require('path');
 
 router.get('/profile', function(req, res, next) {
-    res.render('pages-profile', { title: 'Settings Profile', menu: 'activity', user: {}, message: '' });
+    res.render('pages-profile', { 
+        title: 'Settings Profile', 
+        menu: 'activity', 
+        user: req.session.user, 
+        message: ''});
 });
 
 router.get('/settings', function(req, res, next) {
@@ -61,16 +66,17 @@ router.post('/settings', function(req, res, next) {
                         user.password = encrypt.hashPwd(user.salt, body.password);
                         user.education_level = body.education_level;
                         user.college_name = body.college_name;
-                        user.image = body.filePath;
+                        user.image = link;
 
                         user.save(function(err) {
                             req.session.email = user.email;
-                            
+                            req.session.user = user;
+
                             res.render('pages-profile', {
                                 title: 'Settings Profile',
                                 menu: 'settings',
                                 user: user,
-                                message: 'The profile has been updated successfully'
+                                message: 'The profile has been updated successfully',
                             });
                         });
                     }
@@ -81,7 +87,7 @@ router.post('/settings', function(req, res, next) {
             res.render('pages-profile', { 
                 title: 'Settings Profile',
                 menu: 'settings',
-                user: {},
+                user: req.session.user,
                 message: 'You should upload your profile image' 
             });
         }
