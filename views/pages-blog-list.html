@@ -124,10 +124,11 @@
                                     
                                     <div class="row" id="project_list">
                                         <% projects.forEach(function(project){ %>
+
                                             <div class="col-md-8">
                                                 <div class="post-item">
                                                     <div class="post-title">
-                                                        <% if(project.private == 'true' ){ %>
+                                                        <% if(project.private == true ){ %>
                                                             <a href="pages-blog-post.html" style="color:rgb(255, 193, 7)" ><%= project.title %></a>
                                                         <% }else {%>
                                                             <a href="pages-blog-post.html" style="color:rgb(76, 175, 80)" ><%= project.title %></a>

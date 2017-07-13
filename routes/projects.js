@@ -67,6 +67,7 @@ router.post('/ajax_get', function(req, res, next) {
 			    return Object.assign(a, {[b]: (a[b] || 0) + 1})
 			}, {});
 
+			console.log(projects)
 
 			res.render('pages-project-list', { 
 					title: 'Projects list', 
@@ -110,6 +111,7 @@ router.post('/create', function(req, res, next) {
 			   	if (err)
 			     	return res.status(500).send(err);
 
+			    var private = body.private == 'true' ? true : false;
 			    var project = new Project({
 			    	title: body.title,
 			    	content: body.content,
@@ -119,7 +121,7 @@ router.post('/create', function(req, res, next) {
 			    	follow: 0,
 			    	view: 0,
 			    	author_id: sess.user_id,
-			    	private: body.private
+			    	private: private
 			    })
 
 			    project.save(function(err){
