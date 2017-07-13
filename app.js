@@ -43,7 +43,7 @@ app.use('/', function(req, res, next) {
   var sess = req.session;
   console.log(sess.email);
 
-  if(req.path.indexOf('auth') > -1) {
+  if(req.path.indexOf('auth') > -1 || req.path.indexOf('ajax') > -1) {
     console.log("auth")
     next();
   } else if(sess.email){

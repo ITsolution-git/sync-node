@@ -12,7 +12,7 @@ router.get('/index', function(req, res, next) {
 		page = req.query.page;
 
 	if(per_page == undefined || per_page == '' || per_page == 0) {
-		per_page = 8;
+		per_page = 5;
 		page = 0;
 	}
 	per_page = parseInt(per_page);
@@ -38,6 +38,44 @@ router.get('/index', function(req, res, next) {
 					per_page: per_page,
 					category: category_list, 
 					user: req.session.user });
+		})
+	})
+});
+
+router.post('/ajax_get', function(req, res, next) {
+	var body = req.body,
+		per_page = 5;
+
+	page = body.page;
+	id = body['user[_id]']
+
+	if(page == undefined || page == '' || page == 0) {
+		page = 0;
+	}
+
+	per_page = parseInt(per_page);
+	page = parseInt(page);
+
+	Project.count({author_id: id}, function(err, count){
+		Project.find({author_id: id}, {} , { skip: per_page * page, limit: per_page}, function(err, projects){
+			categories = []
+			projects.forEach(function(project){
+				categories = categories.concat(project.category);
+			});
+
+			category_list = categories.reduce(function(a, b) {
+			    return Object.assign(a, {[b]: (a[b] || 0) + 1})
+			}, {});
+
+
+			res.render('pages-project-list', { 
+					title: 'Projects list', 
+					projects: projects, 
+					count: Math.ceil(count/per_page), 
+					page: page, 
+					per_page: per_page,
+					category: category_list, 
+					user: {} });
 		})
 	})
 });

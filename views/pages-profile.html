@@ -137,8 +137,13 @@
                                     <% } else { %> 
                                         <a href="/settings/profile" class="list-group-item"><span class="fa fa-bar-chart-o"></span> Activity</a>
                                     <% } %>
+
+                                    <% if (menu == 'groups') { %> 
+                                        <a href="/settings/groups" class="list-group-item active"><span class="fa fa-coffee"></span> Groups </a>
+                                    <% } else { %> 
+                                        <a href="/settings/groups" class="list-group-item"><span class="fa fa-coffee"></span> Groups </a>
+                                    <% } %>                                   
                                     
-                                    <a href="#" class="list-group-item"><span class="fa fa-coffee"></span> Groups </a>
 
                                     <% if (menu == 'settings') { %> 
                                         <a href="/settings/settings" class="list-group-item active"><span class="fa fa-cog"></span> Settings</a>
@@ -334,6 +339,38 @@
                         </div>
                         <% } %>
 
+                        <% if(menu == 'groups') { %>
+                        <div class="col-md-9">
+                            <% users.forEach(function(u){ %>
+                                <div class="col-md-3">
+                                <!-- CONTACT ITEM -->
+                                    <div class="panel panel-default">
+                                        <div class="panel-body profile">
+                                            <div class="profile-image">
+                                                <img src="<%= user.image%>" alt="Nadia Ali"/>
+                                            </div>
+                                            <div class="profile-data">
+                                                <div class="profile-data-name"><%= u.firstname%> <%= u.lastname%></div>
+                                            </div>
+                                            <div class="profile-controls">
+                                                <a href="#" class="profile-control-left"><span class="fa fa-info"></span></a>
+                                                <a href="#" class="profile-control-right"><span class="fa fa-phone"></span></a>
+                                            </div>
+                                        </div>                                
+                                        <div class="panel-body">
+                                            <div class="contact-info">
+                                                <!-- <p><small>Mobile</small><br/>(555) 555-55-55</p> -->
+                                                <p><small>Email</small><br/><%= u.email%></p>
+                                                <!-- <p><small>Address</small><br/>123 45 Street San Francisco, CA, USA</p>                                    -->
+                                            </div>
+                                        </div>                                
+                                    </div>
+                                <!-- END CONTACT ITEM -->
+                                </div>
+                            <% })%>
+                        </div>
+                        <% } %>
+
                         <% if(menu == 'settings') { %>
                         <div class="col-md-9">
                             
@@ -407,17 +444,18 @@
                                      <div class="form-group">
                                         <label class="col-md-3 control-label">Education Level</label>
                                         <div class="col-md-6 col-xs-12">
-                                        <input type="text" class="form-control" name="education_level"  value="<%= user.education_level%>"/>
+                                            <select class="form-control" name="education_level" value="<%= user.education_level%>">
+                                                <option value="middle_school">Middle School</option>
+                                                <option value="high_school">High School</option>
+                                                <option value="associates">Associates</option>
+                                                <option value="bachelors">Bachelors</option>
+                                                <option value="masters">Masters</option>
+                                                <option value="phd">Doctor of Philosophy</option>
+                                                <option value="na">National Academy of Science</option>
+                                            </select>
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label class="col-md-3 control-label">College Name</label>
-                                        <div class="col-md-6 col-xs-12">
-                                        <input type="text" class="form-control" name="college_name" value="<%= user.college_name%>"/>
-                                        </div>
-                                    </div>
-                                    
                                     <div class="form-group">
                                         <label class="col-md-3 col-xs-12 control-label">Profile Image</label>
                                         <div class="col-md-6 col-xs-12">    

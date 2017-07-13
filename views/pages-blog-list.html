@@ -122,12 +122,16 @@
                             <div class="panel panel-default">
                                 <div class="panel-body posts">
                                     
-                                    <div class="row">
+                                    <div class="row" id="project_list">
                                         <% projects.forEach(function(project){ %>
-                                            <div class="col-md-6">
+                                            <div class="col-md-8">
                                                 <div class="post-item">
                                                     <div class="post-title">
-                                                        <a href="pages-blog-post.html"><%= project.title %></a>
+                                                        <% if(project.private == true ){ %>
+                                                            <a href="pages-blog-post.html" style="color:rgb(255, 193, 7)" ><%= project.title %></a>
+                                                        <% }else {%>
+                                                            <a href="pages-blog-post.html" style="color:rgb(76, 175, 80)" ><%= project.title %></a>
+                                                        <% }%>
                                                     </div>
                                                     <div class="post-date"><span class="fa fa-calendar"></span> <%= project.created_at %> / <a href="pages-blog-post.html#comments">3 Comments</a> / <a href="pages-profile.html">by me</a></div>
                                                     <div class="post-text">
@@ -146,34 +150,6 @@
                                     </div>
                                 </div>
                             </div>
-                            
-                            <ul class="pagination pagination-sm pull-right push-down-20">
-                                <% if (count > 1) { %>
-                                    <% if ((page -1) < 0 ) { %> 
-                                        <li class="disabled"><a href="">«</a></li>
-                                    <% } else { %>
-                                        <li><a href="?per_page=<%= per_page%>&page=<%= page - 1 %>">«</a></li>
-                                    <% } %>
-                                <% } %>    
-
-                                <% for(var i = 0; i < count ; i++) {%> 
-                                    <% if(i == page) { %>
-                                        <li class="active"><a href="?per_page=<%= per_page%>&page=<%= i%>"><%= i+1 %></a></li>
-                                    <% } else { %>
-                                        <li><a href="?per_page=<%= per_page%>&page=<%= i%>"><%= i+1 %></a></li>
-                                    <% } %>
-                                <% } %>
-
-                                <% if (count > 1) { %>
-                                    <% if ((page + 1) > count) { %> 
-                                        <li class="disabled"><a href="">»</a></li>
-                                    <% } else { %>
-                                        <li ><a href="?per_page=<%= per_page%>&page=<%= page+1 %>">»</a></li>
-                                    <% } %>
-                                <% } %>
-
-                            </ul>                            
-                            
                         </div>   
                         <div class="col-md-3">
                             
@@ -245,12 +221,47 @@
 
         <!-- START TEMPLATE -->
         <script type="text/javascript" src="/js/settings.js"></script>
-        
+        <!-- <script type="text/javascript" src="/js/project/list.js"></script> -->
         <script type="text/javascript" src="/js/plugins.js"></script>        
         <script type="text/javascript" src="/js/actions.js"></script>
         <!-- END TEMPLATE -->
 
     <!-- END SCRIPTS -->         
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var win = $(window);
+
+                var page = 0, notLoading = false;
+
+                // Each time the user scrolls
+                win.scroll(function() {
+                    // End of the document reached?
+                    if ($(document).height() - win.height() == win.scrollTop()) {
+                        // $('#loading').show();
+
+                        if(notLoading == false){
+                            page += 1;              
+                            $.ajax({
+                                url: '/projects/ajax_get',
+                                type: 'POST',
+                                data: {
+                                    page: page,
+                                    user: <%- JSON.stringify(user) %>
+                                },
+                                dataType: 'html',
+                                success: function(html) {
+                                    $('#project_list').append(html);
+                                    if(html == ''){
+                                        notLoading = true;
+                                    }
+                                    // $('#loading').hide();
+                                }
+                            });
+                        } 
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
 

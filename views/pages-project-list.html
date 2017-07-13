@@ -1,0 +1,24 @@
+<% projects.forEach(function(project){ %>
+    <div class="col-md-8">
+        <div class="post-item">
+            <div class="post-title">
+                <% if(project.private == true ){ %>
+                    <a href="pages-blog-post.html" style="color:rgb(76, 175, 80)" ><%= project.title %></a>
+                <% }else {%>
+                    <a href="pages-blog-post.html" style="color:rgb(255, 235, 59)" ><%= project.title %></a>
+                <% }%>
+            </div>
+            <div class="post-date"><span class="fa fa-calendar"></span> <%= project.created_at %> / <a href="pages-blog-post.html#comments">3 Comments</a> / <a href="pages-profile.html">by me</a></div>
+            <div class="post-text">
+                <img src="<%= project.image_link%>" class="img-responsive img-text"/>
+                <p><%= project.content%></p>                                            
+            </div>
+            <div class="post-row">
+                <div class="post-info">
+                    <span class="fa fa-thumbs-up"></span> <%= project.follow %> - <span class="fa fa-eye"></span> <%= project.view%> - <span class="fa fa-star"></span> <%= project.like %>
+                </div>
+                <button class="btn btn-default btn-rounded pull-right">Read more &RightArrow;</button>
+            </div>
+        </div>                                           
+    </div>
+<% }) %>

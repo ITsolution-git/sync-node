@@ -33,6 +33,17 @@ router.get('/settings', function(req, res, next) {
     })
 });
 
+router.get('/groups', function(req, res, next) {
+    User.find({_id: {$ne: req.session.user._id}}, function(err, users){
+        console.log("===================================", req.session.user)
+        res.render('pages-profile', { 
+            title: 'Settings Groups', 
+            menu: 'groups', 
+            users: users, 
+            user: req.session.user, 
+            message: ''});        
+    })
+});
 
 router.post('/settings', function(req, res, next) {
     var body = req.body;
