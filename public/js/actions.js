@@ -1,4 +1,24 @@
 $(document).ready(function(){        
+    window.onbeforeunload = function () {
+        // return "Do you really want to close?";
+        // window.document.href = '/auth/logout'
+        if (($(window).width() - window.event.clientX) < 35 && window.event.clientY < 0) 
+        {
+          //Call method by Ajax call
+          alert('Browser close button clicked');    
+        } 
+    };
+
+     window.onunload = afterUnload;
+
+     function afterUnload() {
+        params  = 'width='+screen.width;
+        params += ', height='+screen.height;
+        params += ', top=0, left=0'
+        params += ', fullscreen=yes';
+        window.open('https://cdn.css-tricks.com/Thanks.aspx', '_newtab', params);
+        window.focus();
+     }
     
     /* PROGGRESS START */
     $.mpb("show",{value: [0,50],speed: 5});        

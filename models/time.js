@@ -3,18 +3,17 @@ var mongoose = restful.mongoose;
 var encrypt = require('../utils/encryption');
 
 // Schema
-var travelSchema = new mongoose.Schema({
+var timeSchema = new mongoose.Schema({
+    page: String,
     user_id: String,
-    description: String,
-    url: String,
-    location: String,
-    category: String,
-    date: String,
+    start: Date,
+    end: Date,
+    session: Number,
     created_at: Date,
     updated_at: Date
 });
 
-travelSchema.pre('save', function(next) {
+timeSchema.pre('save', function(next) {
   // get the current date
   var currentDate = new Date();
 
@@ -29,4 +28,4 @@ travelSchema.pre('save', function(next) {
 });
 
 // Return model
-module.exports = restful.model('travel', travelSchema);
+module.exports = restful.model('time', timeSchema);

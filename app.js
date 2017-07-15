@@ -16,9 +16,11 @@ var projects = require('./routes/projects');
 var search = require('./routes/search');
 var settings = require('./routes/settings');
 var timeline = require('./routes/timeline');
-
+var lastpath = '';
 var config = require('./config')
 
+var Time = require('./models/time')
+var time;
 var app = express();
 
 
@@ -42,13 +44,65 @@ app.use('/', function(req, res, next) {
   // body...
   var sess = req.session;
   console.log(sess.email);
+  console.log("dddddd", req.path)
+
+  if(sess.email && req.path == '/'){
+    res.redirect('/index');
+  }
 
   if(req.path.indexOf('auth') > -1 || req.path.indexOf('ajax') > -1) {
     console.log("auth")
     next();
   } else if(sess.email){
     // res.render('index')
-    next();
+    if(req.path.split('/')[1] == 'index'){
+      if(time == ''){
+        time.end = new Date();
+        time.session = Math.abs(new Date(time.start).getTime() - time.end.getTime());
+        time.save(function(err, t){
+          console.log('success');
+          lastpath = '';
+          next();
+        })
+      }else{
+        next();
+      }      
+    }else if(lastpath == ''){
+      lastpath = req.path.split('/')[1]
+      time = new Time({
+        page: lastpath,
+        user_id: sess.user._id,
+        start: new Date(),
+        end: '',
+        session: 0
+      });
+      time.save(function(err, t){
+        time = t;
+        next();    
+      })
+    } else{
+      lastpath = req.path.split('/')[1]
+      if(lastpath == time.page){
+        next()
+      }else{
+        time.end = new Date();
+        time.session = Math.abs(new Date(time.start).getTime() - time.end.getTime());
+        time.save(function(err, t){
+          lastpath = req.path.split('/')[1]
+          time = new Time({
+            page: lastpath,
+            user_id: sess.user._id,
+            start: new Date(),
+            end: '',
+            session: 0
+          });
+          time.save(function(err, t){
+            time = t;
+            next();    
+          })
+        });
+      }      
+    }    
   } else {
     res.redirect('/auth/login')
   }
