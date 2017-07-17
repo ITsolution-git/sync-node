@@ -3,21 +3,15 @@ var mongoose = restful.mongoose;
 var encrypt = require('../utils/encryption');
 
 // Schema
-var projectSchema = new mongoose.Schema({
-  title: String,
-  author_id: {  type:String, ref: 'user'},
-  image_link: String,
-  content: String,
-  like: Number,
-  follow: Number,
-  view: Number,
-  category: [String],
-  created_at: Date,
-  updated_at: Date,
-  private: Boolean
+var userActivitySchema = new mongoose.Schema({
+    user_id: {type:String, ref: 'user'},
+    activity: String,
+    title: String,
+    created_at: Date,
+    updated_at: Date
 });
 
-projectSchema.pre('save', function(next) {
+userActivitySchema.pre('save', function(next) {
   // get the current date
   var currentDate = new Date();
 
@@ -32,4 +26,4 @@ projectSchema.pre('save', function(next) {
 });
 
 // Return model
-module.exports = restful.model('project', projectSchema);
+module.exports = restful.model('useractivity', userActivitySchema);

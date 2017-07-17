@@ -212,7 +212,7 @@
                                         <div class="timeline-item-icon"><span class="fa fa-globe"></span></div>
                                         <div class="timeline-item-content">
                                             <div class="timeline-heading">
-                                                <img src="/assets/images/users/user2.jpg"/> <a href="#"><%= project.author_id.first_name%> <%= project.author_id.last_name%></a> added article <a href="#"><%= project.title %></a>
+                                                <img src="<%= project.author_id.image%>"/> <a href="#"><%= project.author_id.first_name%> <%= project.author_id.last_name%></a> added article <a href="#"><%= project.title %></a>
                                             </div>
                                             <div class="timeline-body">
                                                 <img src="<%= project.image_link %>" class="img-text" width="150" align="left"/>
@@ -225,14 +225,14 @@
                                                 </ul>                                            
                                             </div>
                                             <div class="timeline-body comments">
-                                                <div class="comment-item">
+                                                <!-- <div class="comment-item">
                                                     <img src="/assets/images/users/user4.jpg"/>
                                                     <p class="comment-head">
                                                         <a href="#">Brad Pitt</a> <span class="text-muted">@bradpitt</span>
                                                     </p>
                                                     <p>Awesome, man, that is awesome...</p>
                                                     <small class="text-muted">10h ago</small>
-                                                </div>                                            
+                                                </div>  -->                                           
                                                 <div class="comment-write">                                                
                                                     <textarea class="form-control" placeholder="Write a comment" rows="1"></textarea>                                                
                                                 </div>
@@ -248,146 +248,6 @@
                                     </div>
                                     <!-- END TIMELINE ITEM -->
                                 <% }) %>
-                                <!-- START TIMELINE ITEM -->
-                                <div class="timeline-item timeline-item-right">
-                                    <div class="timeline-item-info">29 Sep 2014</div>
-                                    <div class="timeline-item-icon"><span class="fa fa-image"></span></div>
-                                    <div class="timeline-item-content">
-                                        <div class="timeline-heading">
-                                            <img src="/assets/images/users/user.jpg"/> <a href="#">Dmitry Ivaniuk</a> posted <a href="#">@Nature</a> images
-                                        </div>
-                                        <div class="timeline-body" id="links">                                            
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <a href="/assets/images/gallery/nature-1.jpg" title="Nature Image 1" data-gallery>
-                                                        <img src="/assets/images/gallery/nature-1.jpg" class="img-responsive img-text"/>
-                                                    </a>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <a href="/assets/images/gallery/nature-2.jpg" title="Nature Image 2" data-gallery>
-                                                        <img src="/assets/images/gallery/nature-2.jpg" class="img-responsive img-text"/>
-                                                    </a>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <a href="/assets/images/gallery/nature-3.jpg" title="Nature Image 3" data-gallery>
-                                                        <img src="/assets/images/gallery/nature-3.jpg" class="img-responsive img-text"/>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="timeline-body comments">
-                                            <div class="comment-item">
-                                                <img src="/assets/images/users/user2.jpg"/>
-                                                <p class="comment-head">
-                                                    <a href="#">John Doe</a> <span class="text-muted">@johndoe</span>
-                                                </p>
-                                                <p>Amazing! Where did you get it?</p>
-                                                <small class="text-muted">10h ago</small>
-                                            </div>                                            
-                                            <div class="comment-write">                                                
-                                                <textarea class="form-control" placeholder="Write a comment" rows="1"></textarea>                                                
-                                            </div>
-                                        </div>                                                                                
-                                    </div>
-                                </div>                                
-                                <!-- END TIMELINE ITEM -->
-                                
-                                <!-- START TIMELINE ITEM -->
-                                <div class="timeline-item">
-                                    <div class="timeline-item-info">06 Oct 2014</div>
-                                    <div class="timeline-item-icon"><span class="fa fa-star"></span></div>
-                                    <div class="timeline-item-content">
-                                        <div class="timeline-heading" style="padding-bottom: 10px;">
-                                            <img src="/assets/images/users/user2.jpg"/> 
-                                            <a href="#">John Doe</a> joined group <a href="#">Web Developers</a>
-                                        </div>     
-                                        <div class="timeline-body comments">
-                                            <div class="comment-item">
-                                                <img src="/assets/images/users/user.jpg"/>
-                                                <p class="comment-head">
-                                                    <a href="#">Dmitry Ivaniuk</a> <span class="text-muted">@Aqvatarius</span>
-                                                </p>
-                                                <p>You r welcome my friend :)</p>
-                                                <small class="text-muted">5 min ago</small>
-                                            </div>
-                                            <div class="comment-item">
-                                                <img src="/assets/images/users/user2.jpg"/>
-                                                <p class="comment-head">
-                                                    <a href="#">John Doe</a> <span class="text-muted">@johndoe</span>
-                                                </p>
-                                                <p>Thank you, Dmitry!!! ;)</p>
-                                                <small class="text-muted">1 min ago / to @Aqvatarius</small>
-                                            </div>
-                                            <div class="comment-write">                                                
-                                                <textarea class="form-control" placeholder="Write a comment" rows="1"></textarea>                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>                                
-                                <!-- END TIMELINE ITEM -->
-                                
-                                <!-- START TIMELINE ITEM -->
-                                <div class="timeline-item timeline-item-right">
-                                    <div class="timeline-item-info">5 Sep 2014</div>
-                                    <div class="timeline-item-icon"><span class="fa fa-map-marker"></span></div>
-                                    <div class="timeline-item-content">                                        
-                                        <div class="timeline-body padding-0">
-                                            <div id="google_ptm_map" style="width: 100%; height: 150px;"></div>
-                                        </div>                         
-                                        <div class="timeline-heading">
-                                            <img src="/assets/images/users/user2.jpg"/> <a href="#">John Doe</a> invite you to <a href="#">@Event</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- END TIMELINE ITEM -->
-                                
-                                <!-- START TIMELINE ITEM -->
-                                <div class="timeline-item">
-                                    <div class="timeline-item-info">06 Oct 2014</div>
-                                    <div class="timeline-item-icon"><span class="fa fa-users"></span></div>
-                                    <div class="timeline-item-content">
-                                        <div class="timeline-heading" style="padding-bottom: 10px;">
-                                            <img src="/assets/images/users/user3.jpg"/>
-                                            <a href="#">Nadia Ali</a> added to friends 
-                                            <img src="/assets/images/users/user.jpg"/>
-                                            <img src="/assets/images/users/user2.jpg"/>
-                                            <img src="/assets/images/users/user4.jpg"/>
-                                        </div>                                        
-                                        <div class="timeline-body comments">
-                                            <div class="comment-write">                                                
-                                                <textarea class="form-control" placeholder="Write a comment" rows="1"></textarea>                                                
-                                            </div>
-                                        </div>                                        
-                                    </div>
-                                </div>                                
-                                <!-- END TIMELINE ITEM -->
-                                
-                                <!-- START TIMELINE ITEM -->
-                                <div class="timeline-item timeline-main">
-                                    <div class="timeline-date">2013</div>
-                                </div>
-                                <!-- END TIMELINE ITEM -->
-                                
-                                <!-- START TIMELINE ITEM -->
-                                <div class="timeline-item timeline-item-right">
-                                    <div class="timeline-item-info">30 Dec 2013</div>
-                                    <div class="timeline-item-icon"><span class="fa fa-user"></span></div>
-                                    <div class="timeline-item-content">
-                                        <div class="timeline-heading padding-bottom-0" style="padding-bottom: 10px;">
-                                            <img src="/assets/images/users/user2.jpg"/>
-                                            <a href="#">John Doe</a> update user image                                            
-                                        </div>                                        
-                                        <div class="timeline-body text-center">
-                                            <img src="/assets/images/users/user2.jpg" width="100" class="img-circle img-thumbnail"/>
-                                        </div>
-                                        <div class="timeline-body comments">
-                                            <div class="comment-write">                                                
-                                                <textarea class="form-control" placeholder="Write a comment" rows="1"></textarea>                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- END TIMELINE ITEM -->
                                 
                                 <!-- START TIMELINE ITEM -->
                                 <div class="timeline-item timeline-main">

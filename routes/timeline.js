@@ -7,9 +7,10 @@ var mongoose = require('mongoose');
 
 
 router.get('/index', function(req, res, next) {
-	Project.find({private: false},null, {sort: {created_at: -1}})
+	Project.find({private: {$ne: true}},null, {sort: {created_at: -1}})
 		.populate('author_id')
 		.exec(function(err, projects) {
+			console.log(projects)
 			res.render('pages-timeline', { 
 				title: 'Timeline', 
 				projects: projects,

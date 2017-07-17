@@ -18,8 +18,13 @@ router.get('/index', function(req, res, next) {
 	per_page = parseInt(per_page);
 	page = parseInt(page);
 
-	Project.count({author_id: sess.user_id}, function(err, count){
-		Project.find({author_id: sess.user_id}, {} , { skip: per_page * page, limit: per_page}, function(err, projects){
+	Project.count({author_id: sess.user._id} ,function(err, count){
+		if(err){
+			console.log(err);
+		}
+
+		Project.find({author_id: sess.user._id}, null , { skip: per_page * page, limit: per_page, sort: {private: -1}}, function(err, projects){
+			if(err) console.log(err)
 			categories = []
 			projects.forEach(function(project){
 				categories = categories.concat(project.category)
@@ -57,7 +62,7 @@ router.post('/ajax_get', function(req, res, next) {
 	page = parseInt(page);
 
 	Project.count({author_id: id}, function(err, count){
-		Project.find({author_id: id}, {} , { skip: per_page * page, limit: per_page}, function(err, projects){
+		Project.find({author_id: id}, {} , { skip: per_page * page, limit: per_page, sort: {private: -1}}, function(err, projects){
 			categories = []
 			projects.forEach(function(project){
 				categories = categories.concat(project.category);

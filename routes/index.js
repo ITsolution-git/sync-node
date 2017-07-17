@@ -19,6 +19,7 @@ router.get('/', function(req, res, next) {
 				url:'https://challenges.openideo.com',
 				location:'San Francisco',
 				category:'green',
+				latlng:[37.78,  -122.41],
 				date:new Date('2016-03-03')
 			});
 
@@ -28,6 +29,7 @@ router.get('/', function(req, res, next) {
 				url:'https://challenges.openideo.com',
 				location:'New York',
 				category:'yellow',
+				latlng: [40.71, -74.00],
 				date:new Date('2016-04-03')
 			});
 
@@ -36,6 +38,7 @@ router.get('/', function(req, res, next) {
 				description: 'this is my travel',
 				url:'https://www.weforum.org',
 				location:'Bangalore',
+				latlng: [12.97, 77.59],
 				category:'red',
 				date:new Date('2016-05-03')
 			});
@@ -45,6 +48,7 @@ router.get('/', function(req, res, next) {
 				description: 'this is my travel',
 				url:'https://challenges.openideo.com',
 				location:'San Diego',
+				latlng:[32.71, -117.16],
 				category:'green',
 				date:new Date('2016-06-03')
 			});
@@ -54,6 +58,7 @@ router.get('/', function(req, res, next) {
 				description: 'this is my travel',
 				url:'https://challenges.openideo.com',
 				location:'San Francisco',
+				latlng:[37.78,  -122.41],
 				category:'green',
 				date:new Date('2016-03-03')
 			});
@@ -63,6 +68,7 @@ router.get('/', function(req, res, next) {
 				description: 'this is my travel',
 				url:'https://challenges.openideo.com',
 				location:'New York',
+				latlng: [40.71, -74.00],
 				category:'yellow',
 				date:new Date('2016-04-03')
 			});
@@ -72,6 +78,7 @@ router.get('/', function(req, res, next) {
 				description: 'this is my travel',
 				url:'https://www.weforum.org',
 				location:'Bangalore',
+				latlng: [12.97, 77.59],
 				category:'red',
 				date:new Date('2016-05-03')
 			});
@@ -81,6 +88,7 @@ router.get('/', function(req, res, next) {
 				description: 'this is my travel',
 				url:'https://challenges.openideo.com',
 				location:'San Diego',
+				latlng:[32.71, -117.16],
 				category:'green',
 				date:new Date('2016-06-03')
 			});
@@ -90,6 +98,7 @@ router.get('/', function(req, res, next) {
 				description: 'this is my travel',
 				url:'https://challenges.openideo.com',
 				location:'San Francisco',
+				latlng:[37.78,  -122.41],
 				category:'green',
 				date:new Date('2016-03-03')
 			});
@@ -99,6 +108,7 @@ router.get('/', function(req, res, next) {
 				description: 'this is my travel',
 				url:'https://challenges.openideo.com',
 				location:'New York',
+				latlng: [40.71, -74.00],
 				category:'yellow',
 				date:new Date('2016-04-04')
 			});
@@ -108,6 +118,7 @@ router.get('/', function(req, res, next) {
 				description: 'this is my travel',
 				url:'https://www.weforum.org',
 				location:'Bangalore',
+				latlng: [12.97, 77.59],
 				category:'red',
 				date:new Date('2016-05-21')
 			});
@@ -116,7 +127,8 @@ router.get('/', function(req, res, next) {
 				user_id: req.session.user._id,
 				description: 'this is my travel',
 				url:'https://challenges.openideo.com',
-				location:'San Diego',
+				location:'Sao Paulo',
+				latlng:[-23.55, -46.63],
 				category:'green',
 				date:new Date('2016-06-12')
 			});
@@ -125,7 +137,8 @@ router.get('/', function(req, res, next) {
 				user_id: req.session.user._id,
 				description: 'this is my travel',
 				url:'https://challenges.openideo.com',
-				location:'San Francisco',
+				location:'San Jose',
+				latlng:[37.33, -121.88],
 				category:'green',
 				date:new Date('2016-03-23')
 			});
@@ -135,6 +148,7 @@ router.get('/', function(req, res, next) {
 				description: 'this is my travel',
 				url:'https://challenges.openideo.com',
 				location:'New York',
+				latlng: [40.71, -74.00],
 				category:'yellow',
 				date:new Date('2016-04-13')
 			});
@@ -144,6 +158,7 @@ router.get('/', function(req, res, next) {
 				description: 'this is my travel',
 				url:'https://www.weforum.org',
 				location:'Bangalore',
+				latlng: [12.97, 77.59],
 				category:'red',
 				date:new Date('2016-05-06')
 			});
@@ -152,7 +167,8 @@ router.get('/', function(req, res, next) {
 				user_id: req.session.user._id,
 				description: 'this is my travel',
 				url:'https://challenges.openideo.com',
-				location:'San Diego',
+				location:'Los Angeles',
+				latlng: [34.05, -118.24],
 				category:'green',
 				date:new Date('2016-06-04')
 			});
@@ -203,6 +219,7 @@ router.get('/', function(req, res, next) {
 						project:0,
 						travel:0,
 						travel_green:[{}],
+						travels:[],
 						total_travel:0,
 						green_travel: 0,
 						yellow_travel: 0,
@@ -211,6 +228,13 @@ router.get('/', function(req, res, next) {
 						yellow_travel_per: 0,
 						red_travel_per: 0,
 						point: 0,
+						total_session_donut:0,
+						total_travel_green:0,
+						total_project_donut: 0,
+						total_comment_donut: 0,
+						total_message_donut: 0,
+						total_game_donut:0,
+						total_auth_donut: 0
 					}
 
 					community = {
@@ -237,7 +261,11 @@ router.get('/', function(req, res, next) {
 						total_message: 0,
 						total_game: 0,
 						total_points:0,
-						total_session:0
+						total_session_bar: 0
+					}
+
+					if(auth_ts.length == 0) {
+
 					}
 
 					auth_ts.forEach(function(t){
@@ -249,6 +277,8 @@ router.get('/', function(req, res, next) {
 						community.total_session += isNaN(t.session) ? 0 : t.session;
 						community.auth_count += 1;
 					})
+
+					cur_user.total_auth_donut = auth_ts.length;
 
 					cur_user.session = Math.ceil(cur_user.total_session / cur_user.auth_count / 3600);
 					community.session = Math.ceil(community.total_session / community.auth_count / 3600);
@@ -305,7 +335,10 @@ router.get('/', function(req, res, next) {
 							let t = travels[i];
 
 							if(t.user_id == req.session.user._id){
-								if(t.category == 'green') cur_user.green_travel += 1;
+								if(t.category == 'green') {
+									cur_user.green_travel += 1;
+									cur_user.travels.push(t)
+								}
 								if(t.category == 'yellow') cur_user.yellow_travel += 1;
 								if(t.category == 'red') cur_user.red_travel += 1;
 							}
@@ -366,21 +399,47 @@ router.get('/', function(req, res, next) {
 						cur_user.green_travel_per = Math.ceil(cur_user.green_travel / 500)
 						cur_user.yellow_travel_per = Math.ceil(cur_user.yellow_travel / 500)
 						cur_user.red_travel_per = Math.ceil(cur_user.red_travel / 500)
+						cur_user.total_session_donut = Math.ceil(cur_user.total_session / 5000)
+
 
 						Project.find({private: false}, function(err, projects){
 							community.total_project = projects.length;
+							var custom_projects = []
+							projects.forEach(function(p){
+								if(p.user_id == req.session.user._id) {
+									cur_user.total_project_donut += 1
+									custom_projects.push(p)
+								}
+							})
 							Comment.find({}, function(err, comments){
 								community.total_comment = comments.length;
+
+								custom_projects.forEach(function(p){
+									comments.forEach(function(c){
+										if(c.project_id == p._id){
+											cur_user.total_comment_donut += 1;
+										}
+									});									
+								});
+
 								Message.find({}, function(err, messages) {
 									community.total_message = messages.length;
+
+									messages.forEach(function(m){
+										if(m.from == req.session.user._id || m.to == req.session.user._id){
+											cur_user.total_message_donut += 1
+										}
+									})
 									Game.find({}, function(err, games){
 										community.total_game = games.length;
 
 										community.total_points = community.total_game * 10 + community.total_project * 5 + community.total_travel_green * 5;
 
+										community.total_session_bar = Math.ceil(community.total_session / 5000)
 										games.forEach(function(g){
 											if(g.user_id == req.session.user._id){
 												cur_user.point += g.point
+												cur_user.total_game_donut += 1
 											}
 										});
 
@@ -388,7 +447,10 @@ router.get('/', function(req, res, next) {
 											if(p.user_id == req.session.user._id){
 												cur_user.point += 5
 											}
-										})
+										});
+
+										console.log(community)
+										console.log(cur_user)
 
 										res.render('index', { 
 											title: 'Express', 

@@ -10,6 +10,7 @@ var travelSchema = new mongoose.Schema({
     location: String,
     category: String,
     date: String,
+    latlng: [Number],
     created_at: Date,
     updated_at: Date
 });

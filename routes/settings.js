@@ -4,15 +4,20 @@ var session = require('express-session');
 var User = require('../models/user');
 var encrypt = require('../utils/encryption');
 var path = require('path');
+var userActivity = require('../models/user_activity');
 
+// Get Request Profile page
 router.get('/profile', function(req, res, next) {
     res.render('pages-profile', { 
         title: 'Settings Profile', 
         menu: 'activity', 
         user: req.session.user, 
-        message: ''});
+        message: '',
+        acts: []});
 });
 
+
+// Get Request Settings Page
 router.get('/settings', function(req, res, next) {
     var sess = req.session;
     User.findOne({ email: sess.email }, function(err, user) {
@@ -23,16 +28,20 @@ router.get('/settings', function(req, res, next) {
                 //              message: "Email or Password is incorrect! Plase try again"
                 // })
         } else {
-            res.render('pages-profile', {
-                title: 'Settings Profile',
-                menu: 'settings',
-                user: user,
-                message: ''
-            });
+            userActivity.find({user_id: user._id}, function(err, acts){
+                res.render('pages-profile', {
+                    title: 'Settings Profile',
+                    menu: 'settings',
+                    user: user,
+                    message: '',
+                    acts: acts
+                });
+            })
         }
     })
 });
 
+// Get Request Goups Page
 router.get('/groups', function(req, res, next) {
     User.find({_id: {$ne: req.session.user._id}}, function(err, users){
         console.log("===================================", req.session.user)
@@ -45,6 +54,8 @@ router.get('/groups', function(req, res, next) {
     })
 });
 
+
+// Update user profile
 router.post('/settings', function(req, res, next) {
     var body = req.body;
     var sess = req.session;
@@ -71,13 +82,31 @@ router.post('/settings', function(req, res, next) {
                     if (err || user == null) {
                         console.log("user not found")
                     } else {
+                        var activityArray = [], activity = '';
+                        if(user.first_name != body.first_name) activityArray.push('First Name')
                         user.first_name = body.first_name;
+                        if(user.last_name != body.last_name) activityArray.push('Last Name')
                         user.last_name = body.last_name;
+                        if(user.email != body.email) activityArray.push('Email')
                         user.email = body.email;
+                        if(user.password != encrypt.hashPwd(user.salt, body.password)) activityArray.push('password')
                         user.password = encrypt.hashPwd(user.salt, body.password);
+                        if(user.education_level != body.education_level) activityArray.push('Education Level')
                         user.education_level = body.education_level;
-                        user.college_name = body.college_name;
+                        if(user.image != link) activityArray.push('Image Link')
                         user.image = link;
+                        if(activityArray.length != 0) {
+                            activity = activityArray.join(', ')
+                        }
+
+
+                        uActivity = new userActivity({
+                            user_id: user._id,
+                            title: 'Update Profile',
+                            activity: 'You updated your profile' + activity + ' at ' + (new Date()).toISOString().substring(0, 10)
+                        });
+
+                        uActivity.save(function(err){})
 
                         user.save(function(err) {
                             req.session.email = user.email;
