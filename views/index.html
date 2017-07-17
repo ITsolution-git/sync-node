@@ -517,32 +517,7 @@
         <script type="text/javascript">
             $(document).ready(function(){
                 labels = ['Session', 'Game', 'Timeline', 'Profile', 'Project'];
-                Morris.Area({
-                  element: 'dashboard-area-1',
-                  data: [
-                    { y: '1 Session', a: <%= cur_user.session%>,b: <%= community.session%>},
-                    { y: '2 Game', a: <%= cur_user.game%>, b: <%= community.game%>},
-                    { y: '3 Timeline', a: <%= cur_user.timeline%>,b: <%= community.timeline%>},
-                    { y: '4 Profile', a: <%= cur_user.profile%>,b: <%= community.profile%>},
-                    { y: '5 Project', a: <%= cur_user.project%>,b: <%= community.project%>},
-                  ],
-                  xkey: 'y',
-                  ykeys: ['a','b'],
-                  labels: ['User','Community'],
-                  resize: true,
-                  hideHover: false,
-                  gridTextSize: '10px',
-                  lineColors: ['#1caf9a','#33414E'],
-                  gridLineColor: '#E5E5E5',
-                  xLabelFormat: function(x){
-                    console.log(x.getYear());
-                    return labels[x.getYear() - 1];
-                  },
-                  yLabelFormat: function(y){
-                    return y.toString() + ' mins';
-                  }
-                });
-
+           
                 
             })
         </script>
