@@ -456,8 +456,8 @@ router.get('/', function(req, res, next) {
 											title: 'Express', 
 											user: req.session.user,
 											count: count,
-											cur_user_lead: cur_user,
-											community_lead: community,
+											cur_user: cur_user,
+											community: community,
 											travel_green: travel_green });
 
 									})
