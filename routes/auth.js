@@ -80,7 +80,7 @@ router.post('/signup', function(req, res, next) {
         }else{
             sess.email = new_user.email;
             console.log("User created successfully")
-            res.redirect('/index');            
+            res.redirect('/auth/login');            
         }
     });    
 });
