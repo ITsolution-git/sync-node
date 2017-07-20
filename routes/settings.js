@@ -8,12 +8,15 @@ var userActivity = require('../models/user_activity');
 
 // Get Request Profile page
 router.get('/profile', function(req, res, next) {
-    res.render('pages-profile', { 
-        title: 'Settings Profile', 
-        menu: 'activity', 
-        user: req.session.user, 
-        message: '',
-        acts: []});
+    userActivity.find({user_id: user._id}, function(err, acts){
+        res.render('pages-profile', {
+            title: 'Settings Profile', 
+            menu: 'activity', 
+            user: req.session.user, 
+            message: '',
+            acts: acts
+        });
+    })
 });
 
 

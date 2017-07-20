@@ -16,6 +16,7 @@ var projects = require('./routes/projects');
 var search = require('./routes/search');
 var settings = require('./routes/settings');
 var timeline = require('./routes/timeline');
+var travels = require('./routes/travels');
 var lastpath = '';
 var config = require('./config')
 
@@ -117,6 +118,7 @@ app.use('/projects', projects);
 app.use('/search', search);
 app.use('/settings', settings);
 app.use('/timeline', timeline);
+app.use('/travels', travels);
 
 
 // catch 404 and forward to error handler
