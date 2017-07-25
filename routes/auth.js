@@ -89,17 +89,21 @@ router.get('/logout', function(req, res, next) {
     AuthTime.findOne({_id: req.session.auth_time_id}, function(err, auth_t){
         if(err) console.log(err)
 
-        auth_t.logout = new Date();
-        auth_t.session = Math.abs(new Date(auth_t.login).getTime() - auth_t.logout.getTime());
-        auth_t.save(function(err){
-            req.session.destroy(function(err) {
-                if(err) {
-                    console.log(err);
-                } else {
-                    res.redirect('/auth/login');
-                }
-            });            
-        })
+        if (auth_t != null){
+            auth_t.logout = new Date();
+            auth_t.session = Math.abs(new Date(auth_t.login).getTime() - auth_t.logout.getTime());
+            auth_t.save(function(err){
+                
+            })            
+        }
+
+        req.session.destroy(function(err) {
+            if(err) {
+                console.log(err);
+            } else {
+                res.redirect('/auth/login');
+            }
+        });            
     })
 
 });

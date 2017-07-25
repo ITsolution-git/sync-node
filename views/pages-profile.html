@@ -58,7 +58,8 @@
                                     </ul>
                                 </li>
                                 <li><a href="/games/index"><span class="fa fa-gamepad"></span> Game</a></li>
-                            <li><a href="/travels/index"><span class="fa fa-gamepad"></span> Travel</a></li>
+                            <li><a href="/travels/index"><span class="fa fa-suitcase"></span> Travel</a></li>
+                                <li><a href="/community/index"><span class="fa fa-line-chart"></span> Community Analytics</a></li>
                             </ul>
                         </li>
                         <li><a href="/messages/index"><span class="fa fa-comments"></span> Messages</a></li>
@@ -68,7 +69,8 @@
                             <ul>
                                 <li class="active"><a href="/settings/profile">Profile</a></li>
                             </ul>
-                        </li>                                                                           
+                        </li> 
+                        <li><a href="/upgrade/index"><span class="fa fa-user-o"></span> Upgrade Account</a></li>                                                                          
                     </li>
                     
                 </ul>
@@ -294,13 +296,35 @@
                                         <label class="col-md-3 control-label">Education Level</label>
                                         <div class="col-md-6 col-xs-12">
                                             <select class="form-control" name="education_level" value="<%= user.education_level%>">
-                                                <option value="middle_school">Middle School</option>
-                                                <option value="high_school">High School</option>
-                                                <option value="associates">Associates</option>
-                                                <option value="bachelors">Bachelors</option>
-                                                <option value="masters">Masters</option>
-                                                <option value="phd">Doctor of Philosophy</option>
-                                                <option value="na">National Academy of Science</option>
+                                                <% if (user.education_level == 'middle_school') {%> 
+                                                    <option value="middle_school" selected="selected">Middle School</option>
+                                                <%} else {%>
+                                                    <option value="middle_school">Middle School</option>
+                                                <%} if (user.education_level == 'high_school') {%>
+                                                    <option value="high_school" selected="selected">High School</option>
+                                                <%} else {%>
+                                                    <option value="high_school">High School</option>
+                                                <%} if (user.education_level == 'associates') {%>
+                                                    <option value="associates" selected="selected">Associates</option>
+                                                <%} else {%>
+                                                    <option value="associates">Associates</option>
+                                                <%} if (user.education_level == 'bachelors') {%>
+                                                    <option value="bachelors" selected="selected">Bachelors</option>
+                                                <%} else {%>
+                                                    <option value="bachelors">Bachelors</option>
+                                                <%} if (user.education_level == 'masters') {%>
+                                                    <option value="masters" selected="selected">Masters</option>
+                                                <%} else {%>
+                                                    <option value="masters">Masters</option>
+                                                <%} if (user.education_level == 'phd') {%>
+                                                    <option value="phd" selected="selected">Doctor of Philosophy</option>
+                                                <%} else {%>
+                                                    <option value="phd">Doctor of Philosophy</option>
+                                                <%} if (user.education_level == 'na') {%>
+                                                    <option value="na" selected="selected">National Academy of Science</option>
+                                                <%} else {%>
+                                                    <option value="na">National Academy of Science</option>
+                                                <%} %>
                                             </select>
                                         </div>
                                     </div>
@@ -309,6 +333,28 @@
                                         <label class="col-md-3 col-xs-12 control-label">Profile Image</label>
                                         <div class="col-md-6 col-xs-12">    
                                             <input type="file" class="fileinput btn-primary" id="filename" title="Browse file" name="image"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-3 col-xs-12 control-label">Linkedin Profile</label>
+                                        <div class="col-md-6 col-xs-12">
+                                            <div class="input-group">
+                                                <div>
+                                                <input type="text" class="form-control" name="linkedin" value="<%= user.linkedin%>"/>
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-3 col-xs-12 control-label">Location</label>
+                                        <div class="col-md-6 col-xs-12">
+                                            <div class="input-group">
+                                                <div>
+                                                <input type="text" class="form-control" name="location" value="<%= user.location%>"/>
+                                                </div>
+                                            </div>                                            
                                         </div>
                                     </div>
 

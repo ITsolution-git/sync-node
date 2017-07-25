@@ -13,10 +13,12 @@ var auth = require('./routes/auth');
 var games = require('./routes/games');
 var messages = require('./routes/messages');
 var projects = require('./routes/projects');
+var upgrade = require('./routes/upgrade');
 var search = require('./routes/search');
 var settings = require('./routes/settings');
 var timeline = require('./routes/timeline');
 var travels = require('./routes/travels');
+var analytics = require('./routes/analytics');
 var lastpath = '';
 var config = require('./config')
 
@@ -119,6 +121,8 @@ app.use('/search', search);
 app.use('/settings', settings);
 app.use('/timeline', timeline);
 app.use('/travels', travels);
+app.use('/upgrade', upgrade);
+app.use('/community', analytics);
 
 
 // catch 404 and forward to error handler

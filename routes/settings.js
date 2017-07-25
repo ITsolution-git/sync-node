@@ -98,6 +98,11 @@ router.post('/settings', function(req, res, next) {
                         user.education_level = body.education_level;
                         if(user.image != link) activityArray.push('Image Link')
                         user.image = link;
+                        if(user.linkedin != body.linkedin) activityArray.push('Linkedin Profile')
+                        user.linkedin = body.linkedin;
+                        if(user.location != body.location) activityArray.push('User Location')
+                        user.location = body.location;
+
                         if(activityArray.length != 0) {
                             activity = activityArray.join(', ')
                         }

@@ -3878,6 +3878,7 @@ background: #1caf9a !important;
   width: 400px;
   margin: 0px auto;
   padding-top: 100px;
+  margin-left: 20rem;
 }
 .login-container .login-box .login-logo {
   background: url("../img/logo.png") top center no-repeat;
@@ -3896,9 +3897,8 @@ background: #1caf9a !important;
   border-radius: 0px;
 }
 .login-container .login-box .login-body .login-title {
-  color: #FFF;
   font-size: 19px;
-  font-weight: 300;
+  font-weight: 700;
   margin-bottom: 20px;
 }
 .login-container .login-box .login-body .form-control {
@@ -3910,7 +3910,7 @@ background: #1caf9a !important;
   height: auto;
 }
 .login-container .login-box .login-body .btn-link {
-  color: #FFF;
+  /*color: #FFF;*/
   border: 0px;
 }
 .login-container .login-box .login-body .login-or {
@@ -3949,7 +3949,7 @@ background: #1caf9a !important;
   line-height: 20px;
   padding: 5px 0px;
   font-size: 12px;
-  color: #FFF;
+  /*color: #FFF;*/
 }
 .login-container .login-box .login-body .login-subtitle a {
   color: #1caf9a;
@@ -3964,10 +3964,11 @@ background: #1caf9a !important;
   color: #FFF;
 }
 .login-container.lightmode {
-  background: url("../img/backgrounds/wall_1.jpg") left top no-repeat;
+  background: url("../img/backgrounds/wall_1.png") left top no-repeat;
+  background-size: cover;
 }
 .login-container.lightmode .login-box .login-body {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.7);
 }
 .login-container.lightmode .login-box .login-body .form-control {
   background: rgba(255, 255, 255, 0.4);
@@ -7337,9 +7338,16 @@ display:none;
 }
 
 .login-logo-title{
-  text-align: center;
-  color: white;
+  text-align: center;  
   font-weight: 700;
   font-size: 27px;
   padding: 7%;
+}
+
+.login-trial {
+  position: absolute;
+  right: 2%;
+  color: white;
+  font-size: 1.5rem;
+  top: 6rem;
 }

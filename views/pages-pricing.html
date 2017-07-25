@@ -46,14 +46,14 @@
                         <li>
                             <a href="/index"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>                        
                         </li>
-                        <li class="xn-openable active">
+                        <li class="xn-openable">
                             <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text">Pages</span></a>
                             <ul>
                                 <li><a href="/timeline/index"><span class="fa fa-clock-o"></span> Timeline</a></li>
-                                <li class="xn-openable active">
+                                <li class="xn-openable">
                                     <a href="#"><span class="fa fa-file"></span> Projects</a>
                                     <ul>                                    
-                                        <li class="active"><a href="/projects/index"><span class="fa fa-copy"></span> List of Posts</a></li>
+                                        <li class=""><a href="/projects/index"><span class="fa fa-copy"></span> List of Posts</a></li>
                                         <li><a href="/projects/create"><span class="fa fa-file-o"></span>Create Project</a></li>
                                     </ul>
                                 </li>
@@ -70,7 +70,7 @@
                                 <li><a href="/settings/profile">Profile</a></li>
                             </ul>
                         </li>                     
-                        <li><a href="/upgrade/index"><span class="fa fa-user-o"></span> Upgrade Account</a></li>                                      
+                        <li class="active"><a href="/upgrade/index"><span class="fa fa-user-o"></span> Upgrade Account</a></li>                                      
                     </li>
                     
                 </ul>
@@ -105,77 +105,95 @@
                 <ul class="breadcrumb">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Pages</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li class="active">Projects</li>
+                    <li><a href="active">Upgrade</a></li>
                 </ul>
                 <!-- END BREADCRUMB -->
                 
                 <!-- PAGE TITLE -->
                 <div class="page-title">                    
-                    <h2><span class="fa fa-arrow-circle-o-left"></span> Projects</h2>
+                    <h2><span class="fa fa-arrow-circle-o-left"></span> Upgrade Account</h2>
                 </div>
                 <!-- END PAGE TITLE -->                
                 
                 <!-- PAGE CONTENT WRAPPER -->
                 <div class="page-content-wrap">
                     
-                    <div class="row">
-                        <div class="col-md-9">
-                            
-                            <div class="panel panel-default">
-                                <div class="panel-body posts">
-                                    
-                                    <div class="row" id="project_list">
-                                        <% projects.forEach(function(project){ %>
-
-                                            <div class="col-md-8">
-                                                <div class="post-item">
-                                                    <div class="post-title">
-                                                        <% if(project.private == true ){ %>
-                                                            <a href="pages-blog-post.html" style="color:rgb(255, 193, 7)" ><%= project.title %></a>
-                                                        <% }else {%>
-                                                            <a href="pages-blog-post.html" style="color:rgb(76, 175, 80)" ><%= project.title %></a>
-                                                        <% }%>
-                                                    </div>
-                                                    <div class="post-date"><span class="fa fa-calendar"></span> <%= project.created_at %> / <a href="pages-blog-post.html#comments">3 Comments</a> / <a href="pages-profile.html">by me</a></div>
-                                                    <div class="post-text">
-                                                        <img src="<%= project.image_link%>" class="img-responsive img-text"/>
-                                                        <p><%= project.content%></p>                                            
-                                                    </div>
-                                                    <div class="post-row">
-                                                        <div class="post-info">
-                                                            <span class="fa fa-thumbs-up"></span> <%= project.follow %> - <span class="fa fa-eye"></span> <%= project.view%> - <span class="fa fa-star"></span> <%= project.like %>
-                                                        </div>
-                                                        <button class="btn btn-default btn-rounded pull-right">Read more &RightArrow;</button>
-                                                    </div>
-                                                </div>                                           
-                                            </div>
-                                        <% }) %>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>   
+                     <div class="row">
+                        <!-- PRICING TABLE -->
                         <div class="col-md-3">
-                            
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                    <h3>Categories</h3>
-                                    <div class="links">
-                                        <a href="#">Front-end <span class="label label-default">195</span></a>
-                                    </div>
+
+                            <div class="panel panel-danger push-up-20">
+                                <div class="panel-body panel-body-pricing">
+                                    <h2>Expolorer<br/><small>Community Star</small></h2>                                
+                                    <p><span class="fa fa-caret-right"></span> Community Feedback</p>
+                                    <p><span class="fa fa-caret-right"></span> Playonomics Geek </p>
+                                    <p><span class="fa fa-caret-right"></span> Community Analytics</p>
+                                    <p><span class="fa fa-caret-right"></span> Timeline Posts </p>
+                                </div>
+                                <div class="panel-footer"> 
+                                    <button class="btn btn-danger btn-block">Choose Plan</button>
                                 </div>
                             </div>
-                            
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                    <h3>Recent</h3>
-                                    <div class="links small">
-                                        <a href="#">Vestibulum porttitor neque vitae odio vulputate molestie</a>
-                                    </div>
+
+                        </div>                    
+
+                        <div class="col-md-3">
+
+                            <div class="panel panel-success push-up-10">
+                                <div class="panel-body panel-body-pricing">
+                                    <h2>Recruiter<br/><small>$89.99 / Per Month</small></h2>                                
+                                    <p><span class="fa fa-caret-right"></span> Convert passive candidates to job applicants</p>
+                                    <p><span class="fa fa-caret-right"></span> Community feedback </p>
+                                    <p><span class="fa fa-caret-right"></span> Location based Talent Search </p>
+                                    <p><span class="fa fa-caret-right"></span> Community Analytics</p>
+                                    <p><span class="fa fa-caret-right"></span> App customizations on-demand</p>
+                                    <p><span class="fa fa-caret-right"></span> Candidate recommendation </p>
+                                    <p><span class="fa fa-caret-right"></span> Add more soft skills on-demand</p>
+                                    <p><span class="fa fa-caret-right"></span> Timeline Posts </p>
+                                </div>
+                                <div class="panel-footer">                                 
+                                    <button class="btn btn-success btn-block">Choose Plan</button>
                                 </div>
                             </div>
-                            
+
                         </div>
+
+                        <div class="col-md-3">
+
+                            <div class="panel panel-info">
+                                <div class="panel-body panel-body-pricing">
+                                    <h2>Business Owner<br/><small>$99.99 / Per Month</small></h2>
+                                    <p><span class="fa fa-caret-right"></span> Convert passive candidates to job applicants</p>
+                                    <p><span class="fa fa-caret-right"></span> Community feedback </p>
+                                    <p><span class="fa fa-caret-right"></span> Location based Talent Search </p>
+                                    <p><span class="fa fa-caret-right"></span> Ninja candidates on-demand </p>
+                                    <p><span class="fa fa-caret-right"></span> Community Analytics</p>
+                                    <p><span class="fa fa-caret-right"></span> App customizations on-demand</p>
+                                    <p><span class="fa fa-caret-right"></span> Candidate recommendation </p>
+                                    <p><span class="fa fa-caret-right"></span> Add more soft skills on-demand</p>
+                                    <p><span class="fa fa-caret-right"></span> Timeline Posts </p>
+                                </div>
+                                <div class="panel-footer"> 
+                                    <button class="btn btn-info btn-block">Choose Plan</button>
+                                </div>
+                            </div>
+
+                        </div>                    
+
+                        <div class="col-md-3">
+                            <div class="panel panel-warning push-up-20">
+                                <div class="panel-body panel-body-pricing">
+                                    <h2>Enterprise<br/><small>$5.99 / Per User</small></h2>                                
+                                    <p><span class="fa fa-caret-right"></span> Employee Engagement License </p>
+                                    <p><span class="fa fa-caret-right"></span> Challenges ( 1 per month)  </p>
+                                </div>
+                                <div class="panel-footer"> 
+                                    <button class="btn btn-warning btn-block">Choose Plan</button>
+                                </div>
+                            </div>
+
+                        </div>                          
+                        <!-- END PRICING TABLE-->
                     </div>
                                                             
                 </div>
@@ -232,39 +250,6 @@
 
     <!-- END SCRIPTS -->         
         <script type="text/javascript">
-            $(document).ready(function() {
-                var win = $(window);
-
-                var page = 0, notLoading = false;
-
-                // Each time the user scrolls
-                win.scroll(function() {
-                    // End of the document reached?
-                    if ($(document).height() - win.height() == win.scrollTop()) {
-                        // $('#loading').show();
-
-                        if(notLoading == false){
-                            page += 1;              
-                            $.ajax({
-                                url: '/projects/ajax_get',
-                                type: 'POST',
-                                data: {
-                                    page: page,
-                                    user: <%- JSON.stringify(user) %>
-                                },
-                                dataType: 'html',
-                                success: function(html) {
-                                    $('#project_list').append(html);
-                                    if(html == ''){
-                                        notLoading = true;
-                                    }
-                                    // $('#loading').hide();
-                                }
-                            });
-                        } 
-                    }
-                });
-            });
         </script>
     </body>
 </html>

@@ -134,7 +134,7 @@ var nvd3Charts = function() {
 	};
 	var startChart3 = function() {
 
-		d3.json('assets/plugins/nvd3/stackedAreaData.json', function(data) {
+		d3.json('/assets/plugins/nvd3/stackedAreaData.json', function(data) {
 			nv.addGraph(function() {
 
 				var chart = nv.models.stackedAreaChart().margin({
@@ -220,7 +220,7 @@ var nvd3Charts = function() {
 
 	};
 	var startChart5 = function() {
-		d3.json('assets/plugins/nvd3/multiBarHorizontalData.json', function(data) {
+		d3.json('/assets/plugins/nvd3/multiBarHorizontalData.json', function(data) {
 			nv.addGraph(function() {
 				var chart = nv.models.multiBarHorizontalChart().x(function(d) {
 					return d.label;
@@ -250,7 +250,7 @@ var nvd3Charts = function() {
 
 	};
 	var startChart6 = function() {
-		d3.json("assets/plugins/nvd3/linePlusBarData.json", function(error, data) {
+		d3.json("/assets/plugins/nvd3/linePlusBarData.json", function(error, data) {
 			nv.addGraph(function() {
 				var chart = nv.models.linePlusBarChart().margin({
 					top : 30,
@@ -289,7 +289,7 @@ var nvd3Charts = function() {
 
 	};
 	var startChart7 = function() {
-		d3.json('assets/plugins/nvd3/cumulativeLineData.json', function(data) {
+		d3.json('/assets/plugins/nvd3/cumulativeLineData.json', function(data) {
 			nv.addGraph(function() {
 				var chart = nv.models.cumulativeLineChart().x(function(d) {
 					return d[0];

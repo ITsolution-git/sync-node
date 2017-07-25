@@ -17,11 +17,11 @@
     <body>
         
         <div class="login-container lightmode">
-        
+            <label class="lable login-trial"> 7 day free trial business owner and recruiters </label>
             <div class="login-box animated fadeInDown">
-                <div class="login-logo-title"> Explore Futher, Faster!</div>
                 <div class="login-body">
-                    <div class="login-title"><strong>Log In</strong> to your account</div>
+                    <div class="login-logo-title"> Playonomics</div>
+                    <div class="login-title" style="font-size: 1em;"> A collaborative platform for recruiter, <br/> employers, researchers and job seekers</div>
                     <div class="login-title" style="color: red; font-size: 1em;"><i><%= message %></i></div>
                     <form action="/auth/login" id="login-form" class="form-horizontal" method="post">
                     <div class="form-group">
@@ -37,27 +37,64 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-6">
-                            <a href="#" class="btn btn-link btn-block">Forgot your password?</a>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <p style="font-size: 1.2rem;"> Are you a Recruiter?  </p>
+                            </div>
+                            <div class="col-md-5">
+                                <input type="radio" name="user_type" class="iradio" />
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <button class="btn btn-info btn-block" >Log In</button>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <p style="font-size: 1.2rem;"> Are you a Business Owner?  </p>
+                            </div>
+                            <div class="col-md-5">
+                                <input type="radio" name="user_type" class="iradio" />
+                            </div>
+                        </div>    
+                        <div class="row">
+                            <div class="col-md-7">
+                                <p style="font-size: 1.2rem;"> Are you a Job Seeker?  </p>
+                            </div>                            
+                            <div class="col-md-5">
+                                <input type="radio" name="user_type" class="iradio" />
+                            </div>
                         </div>
                     </div>
-                    <!-- <div class="login-or">OR</div> -->
-                    <div class="form-group">
-                        <!-- <div class="col-md-4">
-                            <button class="btn btn-info btn-block btn-twitter"><span class="fa fa-twitter"></span> Twitter</button>
+                    <div class="form-group text-center">
+                        <div class="row text-center">
+                            <div class="col-md-3" style="color: transparent;">
+                                .
+                            </div>
+                            <div class="col-md-6">
+                                <a class="btn btn-info btn-block" href="/auth/signup" >Sign Up</a>
+                            </div>
                         </div>
-                        <div class="col-md-4">
-                            <button class="btn btn-info btn-block btn-facebook"><span class="fa fa-facebook"></span> Facebook</button>
+                        <div class="row text-center" style="margin-bottom: 5px;margin-top: 4px;">
+                            <div class="col-md-3" style="color: transparent;">
+                                .
+                            </div>
+                            <div class="col-md-6">
+                                <span class="label label-default">OR</span>
+                            </div>
                         </div>
-                        <div class="col-md-4">                            
-                            <button class="btn btn-info btn-block btn-google"><span class="fa fa-google-plus"></span> Google</button>
-                        </div> -->
-                    </div>
-                    <div class="login-subtitle">
-                        Don't have an account yet? <a href="/auth/signup">Create an account</a>
+                        <div class="row text-center">
+                            <div class="col-md-3" style="color: transparent;">
+                                .
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-info btn-block" type="submit" >Sign In</button>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-md-3" style="color: transparent;">
+                                .
+                            </div>
+                            <div class="col-md-6">
+                                <label class="check"> <input type="checkbox" class="icheckbox" /> Remember Me? </label>
+                            </div>
+                        </div>
                     </div>
                     </form>
                 </div>

@@ -16,7 +16,7 @@
     </head>
     <body>
         <!-- START PAGE CONTAINER -->
-        <div class="page-container">
+        <div class="page-container page-navigation-toggled">
             
             <!-- START PAGE SIDEBAR -->
             <div class="page-sidebar">
@@ -48,28 +48,30 @@
                         <a href="/index"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>                        
                         </li>
                         <li class="xn-openable">
-                            <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text">Pages</span></a>
+                            <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text"> Pages </span> </a>
                             <ul>
-                                <li><a href="/timeline/index"><span class="fa fa-clock-o"></span> Timeline</a></li>
+                                <li><a href="/timeline/index"><span class="fa fa-clock-o"></span> Timeline </a></li>
                                 <li class="xn-openable">
-                                    <a href="#"><span class="fa fa-file"></span> Projects</a>
+                                    <a href="#"><span class="fa fa-file"></span>Projects </a>
                                     <ul>                                    
                                         <li class=""><a href="/projects/index"><span class="fa fa-copy"></span> List of Posts</a></li>
                                         <li><a href="/projects/create"><span class="fa fa-file-o"></span>Create Project</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="/games/index"><span class="fa fa-gamepad"></span> Game</a></li>
-                            <li><a href="/travels/index"><span class="fa fa-gamepad"></span> Travel</a></li>
+                            <li><a href="/travels/index"><span class="fa fa-suitcase"></span> Travel</a></li>
+                                <li><a href="/community/index"><span class="fa fa-line-chart"></span> Community Analytics</a></li>
                             </ul>
                         </li>
-                        <li><a href="/messages/index"><span class="fa fa-comments"></span> Messages</a></li>
-                        <li class="active"><a href="/search/index"><span class="fa fa-search"></span> Search</a></li>
+                        <li><a href="/messages/index"><span class="fa fa-comments"></span> <span class="xn-text">Messages </span> </a></li>
+                        <li class="active"><a href="/search/index"><span class="fa fa-search"></span> <span class="xn-text"> Search </span> </a></li>
                         <li class="xn-openable">
                             <a href="#"><span class="fa fa-file-text-o"></span> <span class="xn-text">Settings</span></a>
                             <ul>
                                 <li class=""><a href="/settings/profile">Profile</a></li>
                             </ul>
-                        </li>                                                                           
+                        </li>      
+                        <li><a href="/upgrade/index"><span class="fa fa-user-o"></span> <span class="xn-text"> Upgrade Account </span> </a></li>                                                                     
                     </li>
                     
                 </ul>
@@ -110,96 +112,30 @@
                 
                 <!-- PAGE TITLE -->
                 <div class="page-title">                    
-                    <h2><span class="fa fa-arrow-circle-o-left"></span> Search</h2>
+                    <h2><span class="fa fa-arrow-circle-o-left"></span> World Wide Talent Search</h2>
                 </div>
                 <!-- END PAGE TITLE -->                
                 
                 <!-- PAGE CONTENT WRAPPER -->
-                <div class="page-content-wrap">
-                    
+                <div class="page-content-wrap">                
+                
                     <div class="row">
-                        <div class="col-md-12">
-                            
-                            <!-- START SEARCH -->                            
+                        <div class="col-md-12">                        
+                            <!-- START jVectorMap World -->
                             <div class="panel panel-default">
-                                <div class="panel-body">                                    
-                                    <div class="row stacked">
-                                        <div class="col-md-6">
-                                            <div class="input-group push-down-10">
-                                                <span class="input-group-addon"><span class="fa fa-search"></span></span>
-                                                <input type="text" class="form-control" placeholder="Keywords..." value="Joli Admin admin template"/>
-                                                <div class="input-group-btn">
-                                                    <button class="btn btn-primary">Search</button>
-                                                </div>
-                                            </div>                                                                
-                                            
-                                            <span class="line-height-30">Search Results for <strong>Joli Admin admin template</strong> (3,877 results)</span>
-                                            <div class="pull-right">
-                                                <div class="btn-group">
-                                                    <button class="btn btn-default active"><span class="fa fa-user"></span></button>
-                                                    <button class="btn btn-default"><span class="fa fa-globe"></span></button>                                        
-                                                </div>
-                                                <button class="btn btn-default"><span class="fa fa-cog"></span></button>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            
-                                            <div class="pull-right push-down-10">
-                                                <button class="btn btn-default active"><span class="fa fa-search"></span> Search</button>
-                                                <button class="btn btn-default"><span class="fa fa-image"></span> Images</button>
-                                                <button class="btn btn-default"><span class="fa fa-map-marker"></span> Maps</button>
-                                                <button class="btn btn-default"><span class="fa fa-camera"></span> Video</button>
-                                                <button class="btn btn-default"><span class="fa fa-file"></span> News</button>
-                                            </div>
-                                            
-                                            <div class="line-height-30 pull-right text-right" style="width: 100%;">
-                                                <a href="#">Support</a> - <a href="#">Contacts</a> - <a href="#">Terms of usage</a>
-                                            </div>                                            
-                                        </div>
-                                    </div>
-                                </div>                                                                
-                            </div>
-                            <!-- END SEARCH -->
-                            
-                            <!-- START SEARCH RESULT -->
-                            <div class="search-results">
-
-                                <div class="sr-item">
-                                    <a href="#" class="sr-item-title">Playonomics</a>
-                                    <div class="sr-item-link">http://themifycloud.com/downloads/free-responsive-bootstrap-joli-angular-js-admin-template-dashboard-web-app/</div>
-                                    <p>Joli Admin – is a powerful admin template based on Bootstrap 3.2. Template is fully responsive and retina ready. In downloaded package you will find .less files, documentation, clean and commented source code. Joli Admin is easy to use and customize, also you will find lots of ready to use elements.</p>
-                                    <p class="sr-item-links"><a href="#">Translate this page</a> - <a href="#">View cache</a> - <a href="#">Remove from search</a></p>
-                                </div>                                
-                                
-                                <div class="sr-item">
-                                    <a href="#" class="sr-item-title">UI/UX Development</a>
-                                    <div class="sr-item-link">http://themifycloud.com/downloads/free-responsive-bootstrap-joli-angular-js-admin-template-dashboard-web-app/</div>
-                                    <p>Duis aliquet condimentum aliquet. Morbi finibus nisi vitae volutpat interdum. Pellentesque sed nisi mauris. Donec <strong>Joli Admin</strong> mattis efficitur mi. Morbi mauris enim, cursus in elit in, facilisis imperdiet metus</p>
-                                    <p class="sr-item-links"><a href="#">Translate this page</a> - <a href="#">View cache</a> - <a href="#">Remove from search</a></p>
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Candidate recommendations will be sent as messages. Mark your selections</h3>
+                                    <div class="pull-right" style="width: 200px;">
+                                        <input type="text" class="form-control" placeholder="Select country" id="vector_world_map_value"/>
+                                    </div>                                
                                 </div>
-                                
-                                <div class="sr-item">
-                                    <a href="#" class="sr-item-title">Top 100 Admin Templates</a>
-                                    <div class="sr-item-link">http://themifycloud.com/downloads/free-responsive-bootstrap-joli-angular-js-admin-template-dashboard-web-app/</div>
-                                    <p>1st place <strong>Joli Admin</strong> - Responsive Bootstrap Admin Template. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mattis a dui vel pretium. Duis nisi turpis, laoreet eu semper ut, eleifend sed dolor. Fusce dapibus dignissim velit vel pulvinar. Sed commodo arcu ac tortor hendrerit dapibus. Maecenas vehicula lacinia neque, quis venenatis dolor venenatis eu. Maecenas maximus est vel purus cursus suscipit. Nunc placerat arcu et ultricies faucibus.</p>
-                                    <p class="sr-item-links"><a href="#">Translate this page</a> - <a href="#">View cache</a> - <a href="#">Remove from search</a></p>
+                                <div class="panel-body panel-body-map">
+                                    <div id="vector_world_map" style="width: 100%; height: 300px"></div>
                                 </div>
-                                
                             </div>
-                            <!-- END SEARCH RESULT -->
-                            <!-- 
-                            <ul class="pagination pagination-sm pull-right push-down-20">
-                                <li class="disabled"><a href="#">«</a></li>
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>                                    
-                                <li><a href="#">»</a></li>
-                            </ul>    -->                         
-                            
-                        </div>                        
+                            <!-- END jVectorMap World -->
+                        </div>               
                     </div>
-                                                            
                 </div>
                 <!-- END PAGE CONTENT WRAPPER -->                       
                                 
@@ -241,10 +177,13 @@
         <!-- END PLUGINS -->
 
         <!-- START THIS PAGE PLUGINS-->        
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+        <script type='text/javascript' src='/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js'></script>
+        <script type='text/javascript' src='/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js'></script>
+        <script type='text/javascript' src='/js/plugins/jvectormap/jquery-jvectormap-europe-mill-en.js'></script>
+        <script type='text/javascript' src='/js/plugins/jvectormap/jquery-jvectormap-us-aea-en.js'></script>
         <script type='text/javascript' src='/js/plugins/icheck/icheck.min.js'></script>
         <script type="text/javascript" src="/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
-        
-        
         <!-- END THIS PAGE PLUGINS-->        
 
         <!-- START TEMPLATE -->
@@ -252,6 +191,7 @@
         
         <script type="text/javascript" src="/js/plugins.js"></script>        
         <script type="text/javascript" src="/js/actions.js"></script>
+        <script type="text/javascript" src="/js/demo_maps.js"></script>
         <!-- END TEMPLATE -->
 
     <!-- END SCRIPTS -->         

@@ -19,6 +19,9 @@ var userSchema = new mongoose.Schema({
     created_at: Date,
     updated_at: Date,
     image: String,
+    type: String, // recruiter, business_owner, job_seeker
+    location: String, 
+    linkedin: String
 });
 
 userSchema.pre('save', function(next) {
