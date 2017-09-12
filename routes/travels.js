@@ -15,6 +15,24 @@ router.get('/index', function(req, res, next) {
 				green_travel += 1;
 				travels.push(t)
 			}
+			if (t.location == 'San Francisco' || t.location == 'New York' || t.location == 'San Diego' || t.location == "San Jose" || t.location == 'Los Angeles' ){
+				t.country = 'United States'
+				t.continent = 'North America'
+				t.save()
+			}
+			if (t.location == 'Bangalore' ) {
+				t.country = 'India'
+				t.continent = 'Asia'
+				t.save()
+			}
+
+			if (t.location == 'Sao Paulo') {
+				t.country = 'Brazil'
+				t.continent = 'South America'
+				t.save()
+			}
+
+
 			if(t.category == 'yellow') yellow_travel += 1;
 			if(t.category == 'red') red_travel += 1;			
 		})

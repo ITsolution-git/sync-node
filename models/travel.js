@@ -8,6 +8,8 @@ var travelSchema = new mongoose.Schema({
     description: String,
     url: String,
     location: String,
+    country: String, 
+    continent: String,
     category: String,
     date: String,
     latlng: [Number],

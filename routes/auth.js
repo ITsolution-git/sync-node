@@ -33,7 +33,7 @@ router.post('/login', function(req, res, next){
                     logout: ''
                 });
                 auth_time.save(function(err, auth_t){
-                    req.session.auth_time_id = auth_t;
+                    req.session.auth_time_id = auth_t._id;
                     console.log('User sign in successfully!')
                     res.redirect('/index');                        
                 })

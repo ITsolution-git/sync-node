@@ -19,6 +19,8 @@ router.get('/', function(req, res, next) {
 				url:'https://challenges.openideo.com',
 				location:'San Francisco',
 				category:'green',
+				country: 'United States',
+				continent: 'North America',
 				latlng:[37.78,  -122.41],
 				date:new Date('2016-03-03')
 			});
@@ -28,6 +30,8 @@ router.get('/', function(req, res, next) {
 				description: 'this is my travel',
 				url:'https://challenges.openideo.com',
 				location:'New York',
+				country: 'United States',
+				continent: 'North America',
 				category:'yellow',
 				latlng: [40.71, -74.00],
 				date:new Date('2016-04-03')
@@ -39,6 +43,8 @@ router.get('/', function(req, res, next) {
 				url:'https://www.weforum.org',
 				location:'Bangalore',
 				latlng: [12.97, 77.59],
+				country: 'India',
+				continent: 'Asia',
 				category:'red',
 				date:new Date('2016-05-03')
 			});
@@ -48,6 +54,8 @@ router.get('/', function(req, res, next) {
 				description: 'this is my travel',
 				url:'https://challenges.openideo.com',
 				location:'San Diego',
+				country: 'United States',
+				continent: 'North America',
 				latlng:[32.71, -117.16],
 				category:'green',
 				date:new Date('2016-06-03')
@@ -58,6 +66,8 @@ router.get('/', function(req, res, next) {
 				description: 'this is my travel',
 				url:'https://challenges.openideo.com',
 				location:'San Francisco',
+				country: 'United States',
+				continent: 'North America',
 				latlng:[37.78,  -122.41],
 				category:'green',
 				date:new Date('2016-03-03')
@@ -68,6 +78,8 @@ router.get('/', function(req, res, next) {
 				description: 'this is my travel',
 				url:'https://challenges.openideo.com',
 				location:'New York',
+				country: 'United States',
+				continent: 'North America',
 				latlng: [40.71, -74.00],
 				category:'yellow',
 				date:new Date('2016-04-03')
@@ -78,6 +90,8 @@ router.get('/', function(req, res, next) {
 				description: 'this is my travel',
 				url:'https://www.weforum.org',
 				location:'Bangalore',
+				country: 'India',
+				continent: 'Asia',
 				latlng: [12.97, 77.59],
 				category:'red',
 				date:new Date('2016-05-03')
@@ -88,6 +102,8 @@ router.get('/', function(req, res, next) {
 				description: 'this is my travel',
 				url:'https://challenges.openideo.com',
 				location:'San Diego',
+				country: 'United States',
+				continent: 'North America',
 				latlng:[32.71, -117.16],
 				category:'green',
 				date:new Date('2016-06-03')
@@ -98,6 +114,8 @@ router.get('/', function(req, res, next) {
 				description: 'this is my travel',
 				url:'https://challenges.openideo.com',
 				location:'San Francisco',
+				country: 'United States',
+				continent: 'North America',
 				latlng:[37.78,  -122.41],
 				category:'green',
 				date:new Date('2016-03-03')
@@ -108,6 +126,8 @@ router.get('/', function(req, res, next) {
 				description: 'this is my travel',
 				url:'https://challenges.openideo.com',
 				location:'New York',
+				country: 'United States',
+				continent: 'North America',
 				latlng: [40.71, -74.00],
 				category:'yellow',
 				date:new Date('2016-04-04')
@@ -118,6 +138,8 @@ router.get('/', function(req, res, next) {
 				description: 'this is my travel',
 				url:'https://www.weforum.org',
 				location:'Bangalore',
+				country: 'India',
+				continent: 'Asia',
 				latlng: [12.97, 77.59],
 				category:'red',
 				date:new Date('2016-05-21')
@@ -128,6 +150,8 @@ router.get('/', function(req, res, next) {
 				description: 'this is my travel',
 				url:'https://challenges.openideo.com',
 				location:'Sao Paulo',
+				country: 'Brazil',
+				continent: 'South America',
 				latlng:[-23.55, -46.63],
 				category:'green',
 				date:new Date('2016-06-12')
@@ -138,6 +162,8 @@ router.get('/', function(req, res, next) {
 				description: 'this is my travel',
 				url:'https://challenges.openideo.com',
 				location:'San Jose',
+				country: 'United States',
+				continent: 'North America',
 				latlng:[37.33, -121.88],
 				category:'green',
 				date:new Date('2016-03-23')
@@ -148,6 +174,8 @@ router.get('/', function(req, res, next) {
 				description: 'this is my travel',
 				url:'https://challenges.openideo.com',
 				location:'New York',
+				country: 'United States',
+				continent: 'North America',
 				latlng: [40.71, -74.00],
 				category:'yellow',
 				date:new Date('2016-04-13')
@@ -158,6 +186,8 @@ router.get('/', function(req, res, next) {
 				description: 'this is my travel',
 				url:'https://www.weforum.org',
 				location:'Bangalore',
+				country: 'India',
+				continent: 'Asia',
 				latlng: [12.97, 77.59],
 				category:'red',
 				date:new Date('2016-05-06')
@@ -168,6 +198,8 @@ router.get('/', function(req, res, next) {
 				description: 'this is my travel',
 				url:'https://challenges.openideo.com',
 				location:'Los Angeles',
+				country: 'United States',
+				continent: 'North America',
 				latlng: [34.05, -118.24],
 				category:'green',
 				date:new Date('2016-06-04')
